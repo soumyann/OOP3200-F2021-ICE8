@@ -1,7 +1,7 @@
 /*
-*Author : Soumya N.Narayananunni
+* Author : Soumya N.Narayananunni
 * Date: Nov 12,2021
-* File: ICE8*
+* File: ICE8
  */
 
 package ca.durhamcollege;
@@ -38,14 +38,13 @@ public class Main
 
                 if ((age <= 0.0f) ||  (age >=120.0))
                 {
-                    //Output
+
 
                     System.out.println("Error: You must enter an age greater than 0.0 and less than 120 years old.");
                     keyboard.nextLine();
                     isValidInput = false;
 
-                    /// System.out.printf("You entered: %s \n", name);
-                    //System.out.printf("You entered: %.2f \n", age);
+
                 }
             }
             catch (InputMismatchException inputMismatchException)
@@ -57,7 +56,33 @@ public class Main
 
         }
         while(!isValidInput);
+        // Multi dimensional array example
+        System.out.println("Multi-Dimensional array Example");
+        int rows = 8;
+        int columns = 8;
+        float[][] board = new float[rows][columns];
+        for (int x=0; x< rows; x++)
+        {
+            for (int y = 0; y < columns; y++)
+            {
+                board[x][y]= (float)(Math.random()*100.0)+1.0f;
+            }
+        }
 
+        System.out.println("Showing 10 RAndom VAlues: ");
+
+        for(int i = 0; i< 10; i++)
+        {
+            var randRows = (int)(Math.random()*rows);
+            var randCols = (int)(Math.random() * columns);
+            System.out.print("For Row: " + randRows + " Column: " + randCols + " ");
+            System.out.printf("The Random number is: %.2f \n", board[randRows][randCols]);
+        }
+
+        //Output
+        System.out.println();
+        System.out.printf("You entered: %s \n", name);
+        System.out.printf("You entered: %.2f \n", age);
     }
 }
 
